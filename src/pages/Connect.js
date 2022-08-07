@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
 import axios from "axios";
 
 import "./styles/auth.scss";
@@ -24,12 +23,6 @@ const Register = ({ handleToken }) => {
     } catch (error) {
       console.log("catchErrorConnect", error);
     }
-    //TODO
-    // if (Cookies.get("userRegister") === email + password) {
-    //   alert("ok bienvenue");
-    // } else {
-    //   alert("pas bienvenue non");
-    // }
   };
 
   return (
