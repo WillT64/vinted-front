@@ -25,7 +25,6 @@ const Register = ({ handleToken }) => {
           newsletter,
         }
       );
-      console.log(response.data);
       handleToken(response.data.token);
       navigate("/");
     } catch (error) {

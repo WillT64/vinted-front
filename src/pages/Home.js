@@ -7,11 +7,8 @@ import Articles from "../components/articles";
 
 const Home = () => {
   const [data, setData] = useState();
-  console.log("~ data", data);
   const [isLoading, setIsLoading] = useState(true);
-
   const [filter, setFilter] = useState({});
-  console.log("~ filter", filter);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,11 +18,10 @@ const Home = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
-        // console.log(error.response);
+        console.log(error.response);
       }
     };
     fetchData();
@@ -34,8 +30,6 @@ const Home = () => {
   // fetch filter
   useEffect(() => {
     const fetchData = async () => {
-      console.log("~ fetchData");
-
       try {
         let url = `https://lereacteur-vinted-api.herokuapp.com/offers?`;
 

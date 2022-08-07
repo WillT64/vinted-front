@@ -7,7 +7,6 @@ import "./styles/product-styles.scss";
 const Product = () => {
   const { id } = useParams();
   const [data, setData] = useState();
-  console.log("~ data", data);
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
@@ -20,7 +19,6 @@ const Product = () => {
         const response = await axios.get(
           "https://lereacteur-vinted-api.herokuapp.com/offers"
         );
-        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

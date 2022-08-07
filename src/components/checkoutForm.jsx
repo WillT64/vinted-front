@@ -22,9 +22,7 @@ const CheckoutForm = () => {
       const stripeResponse = await stripe.createToken(cardElement, {
         name: "l'id de l'acheteur",
       });
-      //   console.log("stripeResponse", stripeResponse);
       const stripeToken = stripeResponse.token.id;
-      console.log("~ stripeToken", stripeToken);
 
       /// je recois bien le token
       if (stripeToken) {
@@ -34,8 +32,6 @@ const CheckoutForm = () => {
           cost: price,
           description: name,
         });
-
-        console.log("~ response.data", response.data);
 
         if (response.data === "succeeded") {
           setPurchaseCompleted(true);

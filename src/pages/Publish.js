@@ -28,7 +28,6 @@ const Publish = ({ userToken }) => {
       formData.append("city", location);
       formData.append("price", price);
       formData.append("picture", picture);
-      console.log("~ formData", formData);
 
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
@@ -39,7 +38,6 @@ const Publish = ({ userToken }) => {
           },
         }
       );
-      console.log("responsePublishForm", response.data);
       if (response.data._id) {
         navigate(`/product/${response.data._id}`);
       }
